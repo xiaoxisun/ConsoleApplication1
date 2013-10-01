@@ -31,10 +31,23 @@ namespace ConsoleApplication1
             myTreadOne.Start();
             myTreadTwo.Start();
             */
+            /*
+            string a = "test is (XXX)";
+            string v=a.Replace("XXX", "02 Januray 2012");
+            Console.WriteLine(a[13]);
+            */
+
+            //sortArray
+            //sortArray.Test();
+
+            //DP
+            DynamicProgramming.test();
+
+            /*
             Console.WriteLine("test point 0");
             tester_tryFinally();
             Console.WriteLine("test point 1");
-
+            */
             System.Console.ReadKey();
         }
 
