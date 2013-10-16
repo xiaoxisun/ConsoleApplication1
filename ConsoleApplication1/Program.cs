@@ -9,6 +9,7 @@ using System.Threading;
 //using MyNamespace;
 using BasicDataStructure;
 using MyNamespace;
+using BasicAlgorithms;
 
 namespace ConsoleApplication1
 {
@@ -41,7 +42,23 @@ namespace ConsoleApplication1
             //sortArray.Test();
 
             //DP
-            DynamicProgramming.test();
+            //DynamicProgramming.test();
+
+            //GetMedian
+            //GetMedian myMedian = new GetMedian();
+            //int test = myMedian.Selection(myMedian.A, myMedian.A.Length/2);
+            //Console.WriteLine("test="+test);
+          
+            //GetGCD
+            //GCD myGCD = new GCD();
+            //int nGCD=myGCD.GetGCD(999154,124583);
+            //Console.WriteLine("nGCD=" + nGCD);
+          
+            //Primarity test 
+            //  87178291199, 63018038201, 489133282872437279,19175002942688032928599
+            // 160481183
+            //IsPrime.IsPrimeSqrt(63018038201);
+            IsPrime.IsPrimeFermat(341);
 
             /*
             Console.WriteLine("test point 0");
