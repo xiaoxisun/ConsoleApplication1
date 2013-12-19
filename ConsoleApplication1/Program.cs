@@ -43,7 +43,9 @@ namespace ConsoleApplication1
 
             //DP
             //DynamicProgramming.test();
-
+            //DP
+            //DynamicProgramming.test();
+            
             //GetMedian
             //GetMedian myMedian = new GetMedian();
             //int test = myMedian.Selection(myMedian.A, myMedian.A.Length/2);
@@ -57,8 +59,31 @@ namespace ConsoleApplication1
             //Primarity test 
             //  87178291199, 63018038201, 489133282872437279,19175002942688032928599
             // 160481183
+            
             //IsPrime.IsPrimeSqrt(63018038201);
-            IsPrime.IsPrimeFermat(341);
+            //IsPrime.IsPrimeFermat(341);
+
+            //test largest diff
+            //BasicAlgorithms.LargestDiffBetweenTwoElementInMatrix A = new BasicAlgorithms.LargestDiffBetweenTwoElementInMatrix();
+            //Console.WriteLine("The largest difference is:" + A.GetLargestDiff());
+
+
+            //test matrix power 
+            //MatrixPower A = new MatrixPower();
+            //A.test();
+            
+            //int[] a = {1,2,3};
+            //int[] b = a;
+            //a[2] = 4;
+            //Console.WriteLine("b2:"+b[2]);
+
+            //int i = 1;
+            //Console.WriteLine(0 & (1<<'b'-'a') );
+            char[] aC = { 'a', 'c', 'c' };
+            stringQuestions aQ = new stringQuestions();
+            aQ.sTest1 = "stest2 ";
+            aQ.sTest = "stest2 ";
+            Console.Write(aQ.sTest);
 
             /*
             Console.WriteLine("test point 0");

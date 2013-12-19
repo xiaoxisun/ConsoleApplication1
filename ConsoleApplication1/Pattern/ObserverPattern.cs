@@ -19,8 +19,6 @@ ConcreteObserver  (Investor)
 maintains a reference to a ConcreteSubject object
 stores state that should stay consistent with the subject's
 implements the Observer updating interface to keep its state consistent with the subject's
-
-
  */
 
 

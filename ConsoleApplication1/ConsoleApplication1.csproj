@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicAlgorithms\TreesAndMatrix.cs" />
+    <Compile Include="BasicAlgorithms\LargestDiffBetweenTwoElementInMatrix.cs" />
+    <Compile Include="BasicAlgorithms\LargestDiffBetweenTwoElementInArray.cs" />
+    <Compile Include="BasicAlgorithms\MatrixPower.cs" />
     <Compile Include="BasicAlgorithms\GetMedian.cs" />
     <Compile Include="BasicAlgorithms\IsPrime.cs" />
     <Compile Include="BasicAlgorithms\Modular.cs" />
     <Compile Include="BloomFilter.cs" />
     <Compile Include="BasicAlgorithms\GCD.cs" />
+    <Compile Include="LinearProgramming.cs" />
     <Compile Include="DynamicProgramming.cs" />
     <Compile Include="sortArray.cs" />
     <Compile Include="try-finally.cs" />

@@ -33,7 +33,6 @@ namespace MyNamespace
         {
             Hashtable hTable = new Hashtable(sInput.Length);
 
-            hTable.Add(10, 10);
             foreach (char c in sInput) 
             {
                 if (hTable[c] == null) { hTable.Add(c, 1); }
@@ -59,13 +58,16 @@ namespace MyNamespace
         }
 
         //3. Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of the array is not.
-        public string removeDupulicateCharWithoutBuffer(string sInput) 
+        public void removeDupulicateCharWithoutBuffer(char[] str) 
         {
-            string sOutput="";
-
-            //sInput.Replace
-            
-            return sOutput;
+            int map = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((map & (1 << (str[i] - 'a'))) > 0) // duplicate detected
+                    str[i] = '0';
+                else // add unique char as a bit '1' to the map
+                    map |= 1 << (str[i] - 'a');
+            }
         }
 
         
@@ -74,6 +76,18 @@ namespace MyNamespace
             string sOutput = "";
             return sOutput;
         }
+
+
+        public string sTest1;
+
+        public string sTest
+        {
+            set { sTest1 = value + " 1"; }
+            get { return sTest1; }
+        }
+
+       
+
 
     }
   
