@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicAlgorithms\ReverseLinkedList.cs" />
     <Compile Include="BasicAlgorithms\TreesAndMatrix.cs" />
     <Compile Include="BasicAlgorithms\LargestDiffBetweenTwoElementInMatrix.cs" />
     <Compile Include="BasicAlgorithms\LargestDiffBetweenTwoElementInArray.cs" />
@@ -50,23 +51,25 @@
     <Compile Include="BasicAlgorithms\GetMedian.cs" />
     <Compile Include="BasicAlgorithms\IsPrime.cs" />
     <Compile Include="BasicAlgorithms\Modular.cs" />
-    <Compile Include="BloomFilter.cs" />
+    <Compile Include="BasicDataStructure\BloomFilter.cs" />
     <Compile Include="BasicAlgorithms\GCD.cs" />
-    <Compile Include="LinearProgramming.cs" />
-    <Compile Include="DynamicProgramming.cs" />
-    <Compile Include="sortArray.cs" />
-    <Compile Include="try-finally.cs" />
-    <Compile Include="ObserverPattern.cs" />
-    <Compile Include="SingletonPattern.cs" />
-    <Compile Include="NumbersChecker.cs" />
-    <Compile Include="HashTable.cs" />
-    <Compile Include="BasicDataStructure.cs" />
-    <Compile Include="BinaryTree.cs" />
-    <Compile Include="stringQuestions.cs" />
-    <Compile Include="StatusChecker.cs" />
+    <Compile Include="BasicAlgorithms\LinearProgramming.cs" />
+    <Compile Include="BasicAlgorithms\DynamicProgramming.cs" />
+    <Compile Include="BasicDataStructure\sortArray.cs" />
+    <Compile Include="OOP\EqualAndHashcode.cs" />
+    <Compile Include="OOP\InterfaceAndMulipleInheritance.cs" />
+    <Compile Include="ProgrammingConcept\try-finally.cs" />
+    <Compile Include="Pattern\ObserverPattern.cs" />
+    <Compile Include="Pattern\SingletonPattern.cs" />
+    <Compile Include="BasicAlgorithms\NumbersChecker.cs" />
+    <Compile Include="BasicDataStructure\HashTable.cs" />
+    <Compile Include="BasicDataStructure\BasicDataStructure.cs" />
+    <Compile Include="BasicDataStructure\BinaryTree.cs" />
+    <Compile Include="BasicAlgorithms\stringQuestions.cs" />
+    <Compile Include="BasicDataStructure\StatusChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stack.cs" />
+    <Compile Include="BasicDataStructure\Stack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

@@ -10,7 +10,7 @@ namespace MyNamespace
 {
     public class stringQuestions
     {
-          static void Test(string[] args)
+        static void Test(string[] args)
         {
             ConsoleKeyInfo cki;
                

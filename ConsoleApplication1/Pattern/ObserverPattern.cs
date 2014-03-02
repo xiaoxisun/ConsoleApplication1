@@ -10,11 +10,14 @@ using System.Collections.Generic;
  * Subject  (Stock)
 knows its observers. Any number of Observer objects may observe a subject
 provides an interface for attaching and detaching Observer objects.
+ * 
 ConcreteSubject  (IBM)
 stores state of interest to ConcreteObserver
 sends a notification to its observers when its state changes
+ * 
 Observer  (IInvestor)
 defines an updating interface for objects that should be notified of changes in a subject.
+ * 
 ConcreteObserver  (Investor)
 maintains a reference to a ConcreteSubject object
 stores state that should stay consistent with the subject's
@@ -91,7 +94,7 @@ namespace MyNamespace
  * The delegate keyword is used to specify the EventHandler type.
  * The event keyword is used to create an instance of an event that can store methods in its invocation list.
  * */
-
+    
     #region  Observer Pattern with Delegate and Event
   
     public delegate void myEventHandler();
@@ -117,6 +120,7 @@ namespace MyNamespace
                 myEvent.Invoke();
             }
         }
+
     }
 
     public abstract class Subscriber

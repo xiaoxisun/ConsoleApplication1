@@ -15,7 +15,8 @@ namespace BasicAlgorithms
          //declare matrix as two dimentional array, 
         private static int[,] aMatrix;
         public int[,] aResultMatrix;
-        public MatrixPower()
+
+        public MatrixPower()//constructor
         {
             aMatrix=new int[,]
             {
@@ -31,8 +32,10 @@ namespace BasicAlgorithms
 
         public void test()
         {
-            MatrixPowerOperation(3);
+            MatrixPowerOperation(1);
 
+
+            //print out matrix
             for (int i = 0; i < aResultMatrix.GetLength(0); i++)
             {
                 for (int j = 0; j < aResultMatrix.GetLength(1); j++)
@@ -41,19 +44,12 @@ namespace BasicAlgorithms
                 }
                 Console.Write("\n");
             }
-
-            //for (int i = 0; i < aMatrix.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < aMatrix.GetLength(1); j++)
-            //    {
-            //        Console.Write(aMatrix[i, j].ToString() + " ");
-            //    }
-            //    Console.Write("\n");
-            //}
         }
 
         public void MatrixPowerOperation(int n)
         {
+            if (n == 1) return;
+
             int k = 1;
             int[,] aTempMatrix = (int[,])aMatrix.Clone();
 

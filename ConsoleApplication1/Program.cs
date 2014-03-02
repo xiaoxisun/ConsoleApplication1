@@ -1,5 +1,6 @@
 ﻿using System;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -71,25 +72,51 @@ namespace ConsoleApplication1
             //test matrix power 
             //MatrixPower A = new MatrixPower();
             //A.test();
-            
-            //int[] a = {1,2,3};
+
+
+            //int[] a = { 1, 2, 3 };
             //int[] b = a;
             //a[2] = 4;
-            //Console.WriteLine("b2:"+b[2]);
+            //Console.WriteLine("b2:" + b[2]);
 
+            //test value 
             //int i = 1;
             //Console.WriteLine(0 & (1<<'b'-'a') );
-            char[] aC = { 'a', 'c', 'c' };
-            stringQuestions aQ = new stringQuestions();
-            aQ.sTest1 = "stest2 ";
-            aQ.sTest = "stest2 ";
-            Console.Write(aQ.sTest);
+            //char[] aC = { 'a', 'c', 'c' };
+            //stringQuestions aQ = new stringQuestions();
+            //aQ.sTest1 = "stest2 ";
+            //aQ.sTest = "stest2 ";
+            //Console.Write(aQ.sTest);
 
             /*
             Console.WriteLine("test point 0");
             tester_tryFinally();
             Console.WriteLine("test point 1");
             */
+
+            /*
+            Employee A = new Employee();
+            Employee B = new Employee();
+            employee C = new employee();
+
+            Console.WriteLine(A.Equals(B));
+            A._name = "Terry";
+            A._age = 27;
+
+            B._name = "Terry";
+            B._age = 27;
+            Console.WriteLine(A.GetHashCode());
+            Console.WriteLine(B.GetHashCode());
+            */
+
+            //Dictionary<string, int>  dic=new Dictionary<string ,int>();
+            //dic.Add("1",1);
+            //dic.Add("1", 2);
+            //Console.WriteLine(dic["1"]);
+            ReverseLinkedList Aclass = new ReverseLinkedList();
+
+            Aclass.reverse();
+
             System.Console.ReadKey();
         }
 
@@ -158,33 +185,33 @@ namespace ConsoleApplication1
             Console.WriteLine(aHash.Get("Terry"));
         }
 
-        static void tester_LinkedList()
-        {
-            LinkedList<string> A = new LinkedList<string>();
+        //static void tester_LinkedList()
+        //{
+        //    LinkedList<string> A = new LinkedList<string>();
 
-            //Test add
-            A.addLast("test1");
-            //A.addLast("test2"); 
-            A.addLast("test2");
-            A.addLast("test3");
-            A.addLast("test4");
+        //    //Test add
+        //    A.addLast("test1");
+        //    //A.addLast("test2"); 
+        //    A.addLast("test2");
+        //    A.addLast("test3");
+        //    A.addLast("test4");
 
-            //test print Nodes()
-            A.printNodes();
+        //    //test print Nodes()
+        //    A.printNodes();
 
-            //test Delete
-            //A.deleteNodeByContent("test4");
-            //A.printNodes();
+        //    //test Delete
+        //    //A.deleteNodeByContent("test4");
+        //    //A.printNodes();
 
-            //test revserse Linked list
-            //A.reverseLinkedList();
-           // A.printNodes();
+        //    //test revserse Linked list
+        //    //A.reverseLinkedList();
+        //   // A.printNodes();
 
-            //test revserse Linked list
+        //    //test revserse Linked list
 
-            A.headNode=A.reverseLinkedListRecursive(A.headNode);
-           A.printNodes();
-        }
+        //    A.headNode=A.reverseLinkedListRecursive(A.headNode);
+        //   A.printNodes();
+        //}
 
         static void tester_BinaryTree() 
         {
