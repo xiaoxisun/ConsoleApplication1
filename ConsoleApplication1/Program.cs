@@ -11,6 +11,10 @@ using System.Threading;
 using BasicDataStructure;
 using MyNamespace;
 using BasicAlgorithms;
+using ConsoleApplication1.Practice;
+using ConsoleApplication1.BasicAlgorithms;
+using ConsoleApplication1.ProgrammingConcept;
+using ConsoleApplication1.OOP;
 
 namespace ConsoleApplication1
 {
@@ -18,11 +22,63 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
-           // tester_LinkedList();
+
+            //Test Threading Producer and consumer. 
+            ProducerConsumer aPC = new ProducerConsumer();
+
+            Thread t1 = new Thread(aPC.Producer);
+
+            Thread t2 = new Thread(aPC.Consumer);
+
+          
+            t2.Start();
+            t1.Start();
+
+            for (int i = 0; i < 10; i++)
+            {
+                aPC.Producer();
+                Thread.Sleep(1000);
+            }
+
+
+
+            //test Dynamic binding
+            //DynamicBinding D = new DynamicBinding();
+            //RGB R = new RGB();
+            //HSV H = new HSV();
+            //DynamicBinding X = new HSV();
+
+            //X = R;
+            //X.GetBinaryMask();
+
+            //List<string> result=Permutation.Perm("abc");
+            //foreach (string s in result)
+            //{
+            //    Console.WriteLine(s);
+            //}
+
+            //
+            //FloatVsDoubleVsDecimal.test();
+
+            // test Dispose
+            /*
+            PractiseDisposeAndFinalize A = new PractiseDisposeAndFinalize();
+
+            A.Write1();
+            A.Dispose();
+            
+            using (PractiseDisposeAndFinalize B = new PractiseDisposeAndFinalize())
+            {
+                B.Write1();
+            }
+             */
+
+            // tester_LinkedList();
            // tester_BinaryTree();
             //
             
             //tester_primeNumber();
+            
             /*
             Thread myTreadOne;
             Thread myTreadTwo;
@@ -49,7 +105,7 @@ namespace ConsoleApplication1
             
             //GetMedian
             //GetMedian myMedian = new GetMedian();
-            //int test = myMedian.Selection(myMedian.A, myMedian.A.Length/2);
+            //int test = myMedian.Selection(myMedian.A, 3);
             //Console.WriteLine("test="+test);
           
             //GetGCD
@@ -70,8 +126,11 @@ namespace ConsoleApplication1
 
 
             //test matrix power 
-            //MatrixPower A = new MatrixPower();
+           // MatrixPower A = new MatrixPower();
             //A.test();
+            //A.PrintDiagonally();
+
+            
 
 
             //int[] a = { 1, 2, 3 };
@@ -113,9 +172,54 @@ namespace ConsoleApplication1
             //dic.Add("1",1);
             //dic.Add("1", 2);
             //Console.WriteLine(dic["1"]);
-            ReverseLinkedList Aclass = new ReverseLinkedList();
+            //ReverseLinkedList Aclass = new ReverseLinkedList();
 
-            Aclass.reverse();
+            //Aclass.reverse();
+            //tester_ObserverPatter();
+
+            //PractiseStack A = new PractiseStack();
+            //A.Process();
+
+            //int N = 4;
+            //String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //String elements = alphabet.Substring(0, N);
+
+            ////// using first implementation
+            ////comb1(elements);
+            ////System.out.println();
+
+            ////// using second implementation
+            //BasicAlgorithms.Combinations.comb2(elements);
+
+            //List<List<int>> A = BasicAlgorithms.Combinations.comb(4, 3);
+            //foreach (List<int> B in A)
+            //{
+            //    foreach (int C in B)
+            //    {
+            //        Console.Write(C + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //Console.WriteLine(BasicAlgorithms.Combinations.C(50, 25));
+
+            //reverse a string 
+            //string a = "abcd edf!";
+            //string b=string.Empty;
+            //string c = null;
+            //if (c == ""||c==null) Console.WriteLine("hello");
+            //foreach (char ch in a)
+            //{
+            //    b = ch + b;
+            //    Console.WriteLine(b);
+            //}
+
+            //int remaider = -1 % 2;
+            //double a = 1.00;
+            //if (a==1)
+            //    Console.WriteLine(a);
+
+
 
             System.Console.ReadKey();
         }
@@ -128,26 +232,19 @@ namespace ConsoleApplication1
         static void tester_ObserverPatterByDelegateAndEvent() {
             ConcretePublisher aPublisher = new ConcretePublisher();
 
-            new ConcreteSubscriber(aPublisher, "Jack");
+           List<ConcreteSubscriber> A=new List<ConcreteSubscriber>();
 
-            new ConcreteSubscriber(aPublisher, "John");
+           A.Add(new ConcreteSubscriber(aPublisher, "Jack"));
 
-            new ConcreteSubscriber(aPublisher, "Rose");
+           A.Add(new ConcreteSubscriber(aPublisher, "John"));
 
+           A.Add(new ConcreteSubscriber(aPublisher, "Rose"));
+         
             aPublisher.notify();
         }
 
 
-        static void tester_ObserverPatter() { 
-            ConcreteSubject SolarCity=new ConcreteSubject();
 
-           SolarCity.Attach(new ConcreteObserver(SolarCity,"Jack"));
-           SolarCity.Attach(new ConcreteObserver(SolarCity, "Dani"));
-           SolarCity.Attach(new ConcreteObserver(SolarCity, "John"));
-
-            SolarCity.SubjectState = "news coming";
-            SolarCity.Notify();
-        }
 
         static void tester_SingletonPatter1() {
 
@@ -155,6 +252,20 @@ namespace ConsoleApplication1
           
         }
 
+        static void tester_ObserverPatter()
+        {
+            ConcreteSubject SolarCity = new ConcreteSubject();
+
+            SolarCity.Attach(new ConcreteObserver(SolarCity, "Jack"));
+            SolarCity.Attach(new ConcreteObserver(SolarCity, "Dani"));
+            SolarCity.Attach(new ConcreteObserver(SolarCity, "John"));
+
+            SolarCity.SubjectState = "news coming";
+            SolarCity.Notify();
+
+            SolarCity.SubjectState = "Malisia MH370 news coming, no Survivor.";
+            SolarCity.Notify();
+        }
 
         static void tester_SingletonPatter2()
         {

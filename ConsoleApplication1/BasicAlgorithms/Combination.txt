@@ -1,0 +1,12 @@
+﻿
+public class Combination
+{
+	  public static List<List<int>> comb(int n)
+      {  
+		List<int> A = new List<int>(){1};
+		List<List<int>> B=new List<List<int>>{A};
+			if (n==1)  return B;
+            
+      }
+
+}

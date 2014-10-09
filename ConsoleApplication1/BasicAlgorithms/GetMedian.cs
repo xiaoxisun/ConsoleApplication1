@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections;
 /*  The median of a list of numbers is its 50th percentile: half the numbers are bigger than it,
 and half are smaller.
  *   A simple way is to sort the list and get the median of the group, 
@@ -8,7 +8,8 @@ and half are smaller.
  * O(nlogn)
  * 
  * Another Linear O(n) method is using divide-and-conquer algorithm. 
- * We have reason to be hopeful, because sorting is doing far more work than we really needwe just want the middle
+ * We have reason to be hopeful, because sorting is doing far more work than we really need
+ * we just want the middle
  * element and don't care about the relative ordering of the rest of them.
  * 
  * When looking for a recursive solution, it is paradoxically often easier to work with a more
@@ -37,24 +38,26 @@ namespace BasicAlgorithms
     {
         int n;
         double p;
-        bool bDebug=false;
+        bool bDebug=true;
 
         private int nMedian;
         public int[] A;
 
         public GetMedian(){
-            //A = new int[] {1, 3, 4, 2, 7, 7, 8, 9, 10, 14, 24, 17, 6, 0, 1,7};
+            A = new int[] {1, 3, 4, 2, 7, 7, 8, 9, 10, 14, 24, 17, 6, 0, 1,7};
             //A = new int[] { 1, 3, 4, 0, 1, 7 };
-            Random rnd = new Random();
-            int size = 10000000;
-            A = new int[size];
-            int i=0;
-            while (i < A.Length)
-            {
-                A[i] = rnd.Next(0, size);
-                //A[i] = i;
-                i++;
-            }
+           
+            //create large A
+            //Random rnd = new Random();
+            //int size = 10000000;
+            //A = new int[size];
+            //int i=0;
+            //while (i < A.Length)
+            //{
+            //    A[i] = rnd.Next(0, size);
+            //    //A[i] = i;
+            //    i++;
+            //}
         }
 
         public int _Median(){
@@ -63,11 +66,65 @@ namespace BasicAlgorithms
 
         public int Selection(int[] A, int k)
         {
+            if (A.Length == 0) return 0;
+            if (A.Length==1) return A[0];
+            int PivotIndex = A.Length / 2;
+
+            int Pivot = A[PivotIndex];
+
+            if (bDebug)
+            {
+                int j = 0;
+                while (j < A.Length)
+                {
+                    Console.WriteLine(A[j].ToString());
+                    j++;
+                }
+            }
+
+            ArrayList SL = new ArrayList();
+            ArrayList SR = new ArrayList();
+
+            if (bDebug)
+            {
+                Console.WriteLine("test point 1 A.Length:" + A.Length);
+                Console.WriteLine("test point 1 k:" + k);
+                Console.WriteLine("test point 1 Pivot:" + Pivot);
+               // Console.WriteLine("test point 1 RandomValue:" + RandomValue);
+            }
+
+            for(int i=0;i<A.Length;i++)
+            {
+                if (A[i] < Pivot) SL.Add(A[i]);
+                else if ((A[i] > Pivot)) SR.Add(A[i]);
+            }
+
+            if (k <= SL.Count)
+            { 
+                int[] temp=(int[]) SL.ToArray(typeof(int));
+                return Selection(temp ,k);
+            }
+            else if(k>A.Length-SR.Count)
+            {
+                int[] temp=(int[]) SR.ToArray(typeof(int));
+                return Selection(temp, k - (A.Length - SR.Count));
+            }
+            else
+            {
+                return Pivot;
+            }
+        }
+
+
+
+
+        public int SelectionOriginal(int[] A, int k)
+        {
             if (bDebug) Console.WriteLine("============");
             if (bDebug) Console.WriteLine("Selection Start");
             //int kthIndex = k - 1;
             if (A.Length == 1) return A[0];
-            int kthValue=0;
+            int kthValue = 0;
             /*
              * 1. Get a random number RandomIndex
              * 2. Walk through the list 
@@ -94,8 +151,8 @@ namespace BasicAlgorithms
 
             //1. Get the random number RandomIndex.
             Random rnd = new Random();
-            int RandomIndex = rnd.Next(0,A.Length);
-            int RandomValue =A[RandomIndex];
+            int RandomIndex = rnd.Next(0, A.Length);
+            int RandomValue = A[RandomIndex];
 
             if (bDebug)
             {
@@ -106,8 +163,8 @@ namespace BasicAlgorithms
             }
             //2. Walk through the list, split the input array into 3 sets in place.
             //using two pointers and a swap
-           
-            int nFront=0, nEnd=A.Length-1;
+
+            int nFront = 0, nEnd = A.Length - 1;
 
             while (nFront < nEnd)
             {
@@ -169,7 +226,7 @@ namespace BasicAlgorithms
             while (nEnd > nFront)
             {
                 if (bDebug) Console.WriteLine("nEnd:" + nEnd);
-                if (A[nEnd] <= RandomValue) {  break; }
+                if (A[nEnd] <= RandomValue) { break; }
                 nStartSR = nEnd;
                 nEnd--;
             }
@@ -212,9 +269,8 @@ namespace BasicAlgorithms
 
             //System.Console.ReadKey();
             return kthValue;
-           
-        }
 
+        }
          
     }
 

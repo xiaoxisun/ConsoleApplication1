@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicAlgorithms\Combination.cs" />
+    <Compile Include="BasicAlgorithms\FloatVsDoubleVsDecimal.cs" />
+    <Compile Include="BasicAlgorithms\Permutation.cs" />
+    <Compile Include="BasicAlgorithms\PractiseDisposeAndFinalize.cs" />
     <Compile Include="BasicAlgorithms\ReverseLinkedList.cs" />
     <Compile Include="BasicAlgorithms\TreesAndMatrix.cs" />
     <Compile Include="BasicAlgorithms\LargestDiffBetweenTwoElementInMatrix.cs" />
@@ -56,8 +60,15 @@
     <Compile Include="BasicAlgorithms\LinearProgramming.cs" />
     <Compile Include="BasicAlgorithms\DynamicProgramming.cs" />
     <Compile Include="BasicDataStructure\sortArray.cs" />
+    <Compile Include="OOP\DynamicBinding.cs" />
     <Compile Include="OOP\EqualAndHashcode.cs" />
+    <Compile Include="OOP\HSV.cs" />
     <Compile Include="OOP\InterfaceAndMulipleInheritance.cs" />
+    <Compile Include="OOP\RGB.cs" />
+    <Compile Include="Practice\PractiseStack.cs" />
+    <Compile Include="ProgrammingConcept\AbstractPilot.cs" />
+    <Compile Include="ProgrammingConcept\ISecurity.cs" />
+    <Compile Include="ProgrammingConcept\ProducerConsumer.cs" />
     <Compile Include="ProgrammingConcept\try-finally.cs" />
     <Compile Include="Pattern\ObserverPattern.cs" />
     <Compile Include="Pattern\SingletonPattern.cs" />
@@ -73,6 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BasicAlgorithms\Combination.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

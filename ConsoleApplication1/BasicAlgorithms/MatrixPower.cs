@@ -27,12 +27,13 @@ namespace BasicAlgorithms
             };
 
             aResultMatrix = new int[aMatrix.GetLength(0), aMatrix.GetLength(1)];
+            //aResultMatrix = aMatrix;
  
         }
 
         public void test()
         {
-            MatrixPowerOperation(1);
+            MatrixPowerOperation(3);
 
 
             //print out matrix
@@ -48,7 +49,11 @@ namespace BasicAlgorithms
 
         public void MatrixPowerOperation(int n)
         {
-            if (n == 1) return;
+            if (n == 1)
+            {
+                aResultMatrix = aMatrix;
+                return;
+            }
 
             int k = 1;
             int[,] aTempMatrix = (int[,])aMatrix.Clone();
@@ -83,6 +88,38 @@ namespace BasicAlgorithms
                 }
                 k++;
             }
+        }
+
+
+        public void PrintDiagonally()
+        {
+            int k=0;
+            int m=aMatrix.GetLength(0);
+            int n=aMatrix.GetLength(1);
+
+            int j = 0;
+            int i = 0;
+            while (k<m+n-1)
+            {
+                if (k<n) j = k;
+                else j = n-1;
+                    
+                i=k-j;
+                Console.Write("k="+k);
+                Console.Write("["+i+","+j+"]");
+               // while ((i+j)<=k && i>=0 && j >= 0 && j=<3 && i<=3)
+                while (i+j<=k && i>=0 && j>=0 && j<=3 && i<=3)
+                {
+                    Console.Write("{"+aMatrix[i,j].ToString()+"}");
+
+                    i++;
+                    j--;
+                }
+                Console.WriteLine();
+               k++;
+            }
+
+            return;
         }
 
          

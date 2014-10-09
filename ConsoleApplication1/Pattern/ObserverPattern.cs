@@ -3,11 +3,12 @@ using BasicDataStructure;
 using System.Collections.Generic;
 /// <summary>
 /// Observer pattern
-/// Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. 
+/// Define a one-to-many dependency between objects so that when one object changes state, 
+/// all its dependents are notified and updated automatically. 
 /// </summary>
 ///
 /*
- * Subject  (Stock)
+ * Subject  (IStock)
 knows its observers. Any number of Observer objects may observe a subject
 provides an interface for attaching and detaching Observer objects.
  * 
