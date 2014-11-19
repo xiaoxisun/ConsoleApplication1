@@ -6,6 +6,7 @@ using System.Threading;
 
 namespace ConsoleApplication1.ProgrammingConcept
 {
+    [Serializable()]
     class ProducerConsumer
     {
         private List<int> count;

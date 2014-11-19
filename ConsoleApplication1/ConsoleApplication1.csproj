@@ -60,6 +60,7 @@
     <Compile Include="BasicAlgorithms\LinearProgramming.cs" />
     <Compile Include="BasicAlgorithms\DynamicProgramming.cs" />
     <Compile Include="BasicDataStructure\sortArray.cs" />
+    <Compile Include="Framework\Driver.cs" />
     <Compile Include="OOP\DynamicBinding.cs" />
     <Compile Include="OOP\EqualAndHashcode.cs" />
     <Compile Include="OOP\HSV.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="ProgrammingConcept\AbstractPilot.cs" />
     <Compile Include="ProgrammingConcept\ISecurity.cs" />
     <Compile Include="ProgrammingConcept\ProducerConsumer.cs" />
+    <Compile Include="Framework\TestAttribute.cs" />
+    <Compile Include="Framework\TestAttributeTester.cs" />
     <Compile Include="ProgrammingConcept\try-finally.cs" />
     <Compile Include="Pattern\ObserverPattern.cs" />
     <Compile Include="Pattern\SingletonPattern.cs" />
