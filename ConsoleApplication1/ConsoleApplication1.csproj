@@ -69,7 +69,7 @@
     <Compile Include="Practice\PractiseStack.cs" />
     <Compile Include="ProgrammingConcept\AbstractPilot.cs" />
     <Compile Include="ProgrammingConcept\ISecurity.cs" />
-    <Compile Include="ProgrammingConcept\ProducerConsumer.cs" />
+    <Compile Include="Pattern\ProducerConsumer.cs" />
     <Compile Include="Framework\TestAttribute.cs" />
     <Compile Include="Framework\TestAttributeTester.cs" />
     <Compile Include="ProgrammingConcept\try-finally.cs" />

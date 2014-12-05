@@ -23,32 +23,32 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
-            //Test Attribute
-            TestClassA a = new TestClassA();
-            TestClassB b = new TestClassB();
-            string c = "";
+            ////Test Attribute
+            //TestClassA a = new TestClassA();
+            //TestClassB b = new TestClassB();
+            //string c = "";
 
-            Driver.PrintTestAttributes(a);
-            Driver.PrintTestAttributes(b);
-            Driver.PrintTestAttributes(c);
+            //Driver.PrintTestAttributes(a);
+            //Driver.PrintTestAttributes(b);
+            //Driver.PrintTestAttributes(c);
 
 
             //Test Threading Producer and consumer. 
-            //ProducerConsumer aPC = new ProducerConsumer();
+            ProducerConsumer aPC = new ProducerConsumer();
 
-            //Thread t1 = new Thread(aPC.Producer);
+            Thread t1 = new Thread(aPC.Producer);
 
-            //Thread t2 = new Thread(aPC.Consumer);
+            Thread t2 = new Thread(aPC.Consumer);
 
           
-            //t2.Start();
-            //t1.Start();
+            t2.Start();
+            t1.Start();
 
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    aPC.Producer();
-            //    Thread.Sleep(1000);
-            //}
+            for (int i = 0; i < 10; i++)
+            {
+                aPC.Producer();
+                Thread.Sleep(1000);
+            }
 
 
 
